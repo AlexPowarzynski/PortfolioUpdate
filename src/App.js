@@ -1,25 +1,50 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Jumbotron, Button, Container, Row, Col, Accordion, Card } from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <div></div>
+          <div className="App">
+            <Accordion defaultActiveKey="0">
+            
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="0">
+                  Info
+    </Accordion.Toggle>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>Personal Info/Intro</Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="1">
+                  Projects
+    </Accordion.Toggle>
+                <Accordion.Collapse eventKey="1">
+                  <Card.Body>Scrollable projects</Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="2">
+                  Contact 
+    </Accordion.Toggle>
+                <Accordion.Collapse eventKey="2">
+                  <Card.Body>Contact Information</Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+
+            
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
